@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/chatid"
+    android:title="chat"
+    android:icon="@drawable/ic_chat_black_24dp"
+    app:showAsAction="withText">
+</item>
+    <item
+        android:id="@+id/curric"
+        android:title="curriculum"
+        android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
+        app:showAsAction="withText">
+    </item>
+    <item
+        android:id="@+id/contact"
+        android:title="contacts"
+        android:icon="@drawable/ic_contacts_black_24dp"
+        app:showAsAction="withText">
+    </item>
+    <item
+        android:id="@+id/events"
+        android:title="events"
+        android:icon="@drawable/ic_event_black_24dp"
+        app:showAsAction="withText">
+    </item>
+    <item
+        android:id="@+id/settings"
+        android:title="settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        app:showAsAction="withText">
+    </item>
+    <item
+        android:id="@+id/logout"
+        android:title="LogOut"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        app:showAsAction="withText">
+    </item>
+</menu>
