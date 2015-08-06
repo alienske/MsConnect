@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity{
         analytics = GoogleAnalytics.getInstance(this);
         analytics.setLocalDispatchPeriod(1800);
 
-        tracker = analytics.newTracker("UA-65955382-2"); // Replace with actual tracker/property Id
+        tracker = analytics.newTracker("UA-65955382-4"); // Replace with actual tracker/property Id
         tracker.enableExceptionReporting(true);
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
