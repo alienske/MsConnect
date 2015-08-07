@@ -10,8 +10,7 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
 public class MainActivity extends ActionBarActivity{
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
