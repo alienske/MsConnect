@@ -30,6 +30,14 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.2.3+'
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
+<<<<<<< HEAD
     compile 'me.cafecode.espresso:library:0.5'
     compile 'org.apache:apache:17'
+=======
+    //classpath 'com.google.gms:google-services:1.3.0-beta1'
+
+
+    compile 'com.google.android.gms:play-services:7.3.0'
+
+>>>>>>> c12fe529d05cb0c1e94540559dff75f14df792ca
 }

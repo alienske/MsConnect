@@ -6,7 +6,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
+
 public class MainActivity extends ActionBarActivity{
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,7 @@ public class MainActivity extends ActionBarActivity{
         ab.setLogo(R.mipmap.ic_launcher);
         ab.setDisplayUseLogoEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
+
     }
 
     @Override

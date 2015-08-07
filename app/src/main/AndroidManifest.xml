@@ -3,23 +3,81 @@
     package="com.alienske.msconnect" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+>>>>>>> c12fe529d05cb0c1e94540559dff75f14df792ca
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+<<<<<<< HEAD
 
         <!--
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+=======
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN"/> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- Enable background dispatching to improve delivery on non-Google Play devices -->
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true" >
+>>>>>>> c12fe529d05cb0c1e94540559dff75f14df792ca
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
             </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Enable Google Play Store Campaign reports -->
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+<<<<<<< HEAD
         </activity>
+=======
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.CampaignTrackingService"
+            android:enabled="true" />
+
+        <!--
+         <activity
+             android:name=".MainActivity"
+             android:label="@string/app_name" >
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+>>>>>>> c12fe529d05cb0c1e94540559dff75f14df792ca
         -->
         <activity
             android:name=".Login"
@@ -31,6 +89,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".Curriculum"
             android:label="@string/title_activity_login" >
         </activity>
@@ -41,6 +100,10 @@
         <activity
             android:name=".Logout"
             android:label="@string/title_activity_logout" >
+=======
+            android:name=".ContactList"
+            android:label="@string/title_activity_contact_list" >
+>>>>>>> c12fe529d05cb0c1e94540559dff75f14df792ca
         </activity>
     </application>
 
