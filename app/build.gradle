@@ -30,4 +30,6 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.2.3+'
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'me.cafecode.espresso:library:0.5'
+    compile 'org.apache:apache:17'
 }

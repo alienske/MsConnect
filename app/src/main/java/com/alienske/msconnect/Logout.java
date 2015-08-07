@@ -1,38 +1,72 @@
 package com.alienske.msconnect;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
-public class Logout extends ActionBarActivity {
+public class Logout extends ActionBarActivity implements View.OnClickListener{
+    EditText etUsername, etName, etEmail;
+    Button bLogout;
+    UserLocalStore userLocalStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout);
+        etName = (EditText) findViewById(R.id.etName);
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etUsername = (EditText) findViewById(R.id.etUsername);
+        bLogout = (Button) findViewById(R.id.bRegister);
+
+        bLogout.setOnClickListener(this);
+        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_logout, menu);
-        return true;
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.mainmenu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onStart(){
+      super.onStart();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (authenticate() == true){
+              displayUserDetails();
+        }else {
+            startActivity(new Intent(Logout.this, Login.class));
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    private boolean authenticate(){
+        return userLocalStore.getUserLoggedIn();
+    }
+
+    private void displayUserDetails(){
+       User user = userLocalStore.getLoggedIn();
+
+        etName.setText(user.name);
+        etUsername.setText(user.username);
+        etEmail.setText(user.email);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bLogout:
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(false);
+
+                startActivity(new Intent(this, Login.class));
+                break;
+        }
     }
 }
